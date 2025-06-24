@@ -1,0 +1,103 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dark theme design system with neon accents */
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 220 20% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 220 20% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 100% 50%;
+    --primary-foreground: 220 20% 4%;
+
+    --secondary: 220 20% 8%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 220 20% 8%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 220 20% 10%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 12%;
+    --input: 220 20% 8%;
+    --ring: 200 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 20% 4%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 100% 50%;
+    --sidebar-primary-foreground: 220 20% 4%;
+    --sidebar-accent: 220 20% 8%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 220 20% 12%;
+    --sidebar-ring: 200 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    scroll-behavior: smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glow-text {
+    text-shadow: 0 0 10px currentColor;
+  }
+
+  .neon-border {
+    border: 1px solid transparent;
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+                linear-gradient(45deg, #00D4FF, #8B5CF6, #00FF88) border-box;
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
+  }
+
+  .gradient-bg {
+    background: linear-gradient(135deg, 
+      rgba(0, 212, 255, 0.1) 0%, 
+      rgba(139, 92, 246, 0.1) 50%, 
+      rgba(0, 255, 136, 0.1) 100%);
+  }
+
+  .section-animation {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .section-animation.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
